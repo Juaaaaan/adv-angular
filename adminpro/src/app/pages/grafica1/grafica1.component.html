@@ -1,1 +1,16 @@
-<p>grafica1 works!</p>
+<div class="row">
+  <div class="col-6">
+    <app-dona title="Ventas_1" [doughnutChartLabels]="labels1" [dataChart]="dataCharts1"></app-dona>
+  </div>
+  <div class="col-6">
+    <app-dona title="Compras" [doughnutChartLabels]="labels2" [dataChart]="dataCharts2"></app-dona>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <app-dona [doughnutChartLabels]="labels3" [dataChart]="dataCharts3"></app-dona>
+  </div>
+  <div class="col-6">
+    <app-dona title="Cambios" [doughnutChartLabels]="labels4" [dataChart]="dataCharts4"></app-dona>
+  </div>
+</div>
