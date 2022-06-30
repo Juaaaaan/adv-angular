@@ -11,22 +11,20 @@ const app = express();
 //Enable cors
 app.use(cors());
 
+//Read and parse body
+app.use(express.json());
+
 dbConnection();
 
-console.log(process.env)
+// console.log(process.env)
 
 //juan-adv-avanzado
 //HermanosLL
 
 //Rutas
-app.get('/', (req, res) => {
-    res.json({
-        ok: true,
-        msg: 'Hola'
-    });
-});
 
-
+app.use( '/api/users', require('./routes/users') );
+app.use( '/api/login', require('./routes/auth') );
 
 
 
