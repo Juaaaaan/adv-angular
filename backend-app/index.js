@@ -11,14 +11,18 @@ const app = express();
 //Enable cors
 app.use(cors());
 
-dbConnection();
+//Read and parse body
+app.use(express.json());
 
-console.log(process.env)
+dbConnection();
 
 //juan-adv-avanzado
 //HermanosLL
 
 //Rutas
+app.use( '/api/users', require('./routes/users') );
+app.use( '/api/login', require('./routes/auth') );
+=======
 app.get('/', (req, res) => {
     res.json({
         ok: true,
@@ -27,12 +31,6 @@ app.get('/', (req, res) => {
 });
 
 
-
-
-
-
 app.listen(process.env.PORT, () =>  {
     console.log('Servidor corriendo en puerto ' + process.env.PORT);
 });
-
-
